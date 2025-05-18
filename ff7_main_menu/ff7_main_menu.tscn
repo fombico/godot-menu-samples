@@ -1,0 +1,415 @@
+[gd_scene load_steps=17 format=3 uid="uid://7i3h0vvdugey"]
+
+[ext_resource type="Script" uid="uid://hpyfjguy7tsg" path="res://ff7_main_menu/ff7_main_menu.gd" id="1_gbc73"]
+[ext_resource type="StyleBox" uid="uid://b6vbee7cma8jg" path="res://ff7_main_menu/ff7_menu_panel_style.stylebox" id="2_wn7nu"]
+[ext_resource type="Script" uid="uid://bmv4nemv3kb50" path="res://global/saver_loader.gd" id="3_86ex8"]
+[ext_resource type="Theme" uid="uid://di5q6pd85xehf" path="res://ff7_main_menu/ff7_menu_theme.theme" id="3_wn7nu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbc73"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nwdw3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, 24)]
+}
+
+[sub_resource type="Animation" id="Animation_wn7nu"]
+resource_name = "slide_right"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-200, 24), Vector2(8, 24)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.313726), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lmw0q"]
+_data = {
+&"RESET": SubResource("Animation_nwdw3"),
+&"slide_right": SubResource("Animation_wn7nu")
+}
+
+[sub_resource type="Animation" id="Animation_3ieed"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_fnjh7"]
+resource_name = "slide_left"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.0947325),
+"update": 0,
+"values": [Vector2(1050, 4), Vector2(948, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gbc73"]
+_data = {
+&"RESET": SubResource("Animation_3ieed"),
+&"slide_left": SubResource("Animation_fnjh7")
+}
+
+[sub_resource type="Animation" id="Animation_gbc73"]
+resource_name = "slide_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.0947325),
+"update": 0,
+"values": [Vector2(1050, 484), Vector2(948, 484)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86ex8"]
+_data = {
+&"slide_left": SubResource("Animation_gbc73")
+}
+
+[sub_resource type="Animation" id="Animation_vnrc3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(752, 555)]
+}
+
+[sub_resource type="Animation" id="Animation_h3wi3"]
+resource_name = "slide_up"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(748, 608), Vector2(748, 564)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.498039), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nwdw3"]
+_data = {
+&"RESET": SubResource("Animation_vnrc3"),
+&"slide_up": SubResource("Animation_h3wi3")
+}
+
+[node name="FF7MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gbc73")
+
+[node name="BackgroundPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gbc73")
+
+[node name="CharacterPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 24.0
+offset_right = 1008.0
+offset_bottom = 604.0
+theme_override_styles/panel = ExtResource("2_wn7nu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterPanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_lmw0q")
+}
+autoplay = "slide_right"
+
+[node name="MenuPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 2
+offset_left = 1050.0
+offset_top = 4.0
+offset_right = 1250.0
+offset_bottom = 448.0
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_wn7nu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuPanel"]
+root_node = NodePath("../VBoxContainer")
+libraries = {
+&"": SubResource("AnimationLibrary_gbc73")
+}
+autoplay = "slide_left"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_top = 8.0
+offset_right = 90.0
+offset_bottom = 372.0
+grow_horizontal = 2
+
+[node name="Item" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Item"
+alignment = 0
+
+[node name="Magic" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Magic"
+alignment = 0
+
+[node name="Materia" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Materia"
+alignment = 0
+
+[node name="Equip" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Equip"
+alignment = 0
+
+[node name="Status" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Status"
+alignment = 0
+
+[node name="Order" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Order"
+alignment = 0
+
+[node name="Config" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Config"
+alignment = 0
+
+[node name="Save" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Save"
+alignment = 0
+
+[node name="Load" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Load"
+alignment = 0
+
+[node name="Quit" type="Button" parent="MenuPanel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_wn7nu")
+text = "Quit"
+alignment = 0
+
+[node name="TimeGilPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 484.0
+offset_right = 1250.0
+offset_bottom = 564.0
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("2_wn7nu")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TimeGilPanel"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 4.0
+offset_right = -8.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitTime" type="HSplitContainer" parent="TimeGilPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = -16
+dragging_enabled = false
+dragger_visibility = 2
+drag_area_highlight_in_editor = true
+
+[node name="TimeLabel" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitTime"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+text = "Time"
+vertical_alignment = 1
+
+[node name="TimeText" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitTime"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 16
+text = "0:00:00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HSplitGil" type="HSplitContainer" parent="TimeGilPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+split_offset = -16
+dragging_enabled = false
+dragger_visibility = 2
+drag_area_highlight_in_editor = true
+
+[node name="GilLabel" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitGil"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 20
+text = "Gil"
+vertical_alignment = 1
+
+[node name="GilText" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitGil"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "100,000,000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeGilPanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_86ex8")
+}
+autoplay = "slide_left"
+
+[node name="LocationPanel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.498039)
+layout_mode = 0
+offset_left = 752.0
+offset_top = 555.0
+offset_right = 1152.0
+offset_bottom = 635.0
+theme_override_styles/panel = ExtResource("2_wn7nu")
+
+[node name="LocationLabel" type="RichTextLabel" parent="LocationPanel"]
+custom_minimum_size = Vector2(300, 48)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -26.0
+offset_right = -16.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 24
+text = "Sector 7 Slums"
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LocationPanel"]
+libraries = {
+&"": SubResource("AnimationLibrary_nwdw3")
+}
+autoplay = "slide_up"
+
+[node name="Utils" type="Node" parent="."]
+
+[node name="SaverLoader" type="Node" parent="Utils"]
+unique_name_in_owner = true
+script = ExtResource("3_86ex8")
+metadata/_custom_type_script = "uid://bmv4nemv3kb50"
+
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MenuPanel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

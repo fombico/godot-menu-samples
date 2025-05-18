@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bxtwhov727bd8"]
+
+[node name="Utils" type="Node"]
+
+[node name="SaverLoader" type="Node" parent="."]

@@ -1,0 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="godot-menu-samples"
+run/main_scene="uid://cot0uquxtm26s"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[autoload]
+
+MenuSounds="*res://global/menu_sounds.gd"
+GameClock="*res://global/game_clock.gd"
+
+[dotnet]
+
+project/assembly_name="godot-menu-samples"
