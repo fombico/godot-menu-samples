@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 MenuSounds="*res://global/menu_sounds.gd"
 GameClock="*res://global/game_clock.gd"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="godot-menu-samples"
