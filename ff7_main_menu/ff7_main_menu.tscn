@@ -175,7 +175,9 @@ _data = {
 &"slide_up": SubResource("Animation_h3wi3")
 }
 
-[node name="FF7MainMenu" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="FF7MainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -184,7 +186,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_gbc73")
 
-[node name="BackgroundPanel" type="Panel" parent="."]
+[node name="BackgroundPanel" type="Panel" parent="FF7MainMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -193,7 +195,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gbc73")
 
-[node name="CharacterPanel" type="Panel" parent="."]
+[node name="CharacterPanel" type="Panel" parent="FF7MainMenu"]
 layout_mode = 0
 offset_left = 8.0
 offset_top = 24.0
@@ -201,13 +203,13 @@ offset_right = 1008.0
 offset_bottom = 604.0
 theme_override_styles/panel = ExtResource("2_wn7nu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterPanel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FF7MainMenu/CharacterPanel"]
 libraries = {
 &"": SubResource("AnimationLibrary_lmw0q")
 }
 autoplay = "slide_right"
 
-[node name="MenuPanel" type="Panel" parent="."]
+[node name="MenuPanel" type="Panel" parent="FF7MainMenu"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 offset_left = 1050.0
@@ -217,14 +219,14 @@ offset_bottom = 448.0
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_wn7nu")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MenuPanel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FF7MainMenu/MenuPanel"]
 root_node = NodePath("../VBoxContainer")
 libraries = {
 &"": SubResource("AnimationLibrary_gbc73")
 }
 autoplay = "slide_left"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FF7MainMenu/MenuPanel"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -233,70 +235,84 @@ anchor_right = 0.5
 offset_left = -90.0
 offset_top = 8.0
 offset_right = 90.0
-offset_bottom = 372.0
+offset_bottom = 435.0
 grow_horizontal = 2
 
-[node name="Item" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Item" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Item"
 alignment = 0
 
-[node name="Magic" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Magic" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Magic"
 alignment = 0
 
-[node name="Materia" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Materia" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Materia"
 alignment = 0
 
-[node name="Equip" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Equip" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Equip"
 alignment = 0
 
-[node name="Status" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Status" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Status"
 alignment = 0
 
-[node name="Order" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Order" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Order"
 alignment = 0
 
-[node name="Config" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Config" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Config"
 alignment = 0
 
-[node name="Save" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Save" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Save"
 alignment = 0
 
-[node name="Load" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Load" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Load"
 alignment = 0
 
-[node name="Quit" type="Button" parent="MenuPanel/VBoxContainer"]
+[node name="Control" type="Control" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Quit" type="Button" parent="FF7MainMenu/MenuPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme = ExtResource("3_wn7nu")
 text = "Quit"
 alignment = 0
 
-[node name="TimeGilPanel" type="Panel" parent="."]
+[node name="TimeGilPanel" type="Panel" parent="FF7MainMenu"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 1050.0
@@ -306,7 +322,7 @@ offset_bottom = 564.0
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("2_wn7nu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TimeGilPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="FF7MainMenu/TimeGilPanel"]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 1
 anchors_preset = 15
@@ -319,59 +335,55 @@ offset_bottom = -4.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HSplitTime" type="HSplitContainer" parent="TimeGilPanel/VBoxContainer"]
+[node name="TimeContainer" type="HBoxContainer" parent="FF7MainMenu/TimeGilPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-split_offset = -16
-dragging_enabled = false
-dragger_visibility = 2
-drag_area_highlight_in_editor = true
 
-[node name="TimeLabel" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitTime"]
+[node name="TimeLabel" type="RichTextLabel" parent="FF7MainMenu/TimeGilPanel/VBoxContainer/TimeContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 20
 text = "Time"
 vertical_alignment = 1
 
-[node name="TimeText" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitTime"]
+[node name="TimeText" type="RichTextLabel" parent="FF7MainMenu/TimeGilPanel/VBoxContainer/TimeContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 theme_override_font_sizes/normal_font_size = 16
 text = "0:00:00"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="HSplitGil" type="HSplitContainer" parent="TimeGilPanel/VBoxContainer"]
+[node name="GilContainer" type="HBoxContainer" parent="FF7MainMenu/TimeGilPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-split_offset = -16
-dragging_enabled = false
-dragger_visibility = 2
-drag_area_highlight_in_editor = true
 
-[node name="GilLabel" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitGil"]
+[node name="GilLabel" type="RichTextLabel" parent="FF7MainMenu/TimeGilPanel/VBoxContainer/GilContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_font_sizes/normal_font_size = 20
 text = "Gil"
 vertical_alignment = 1
 
-[node name="GilText" type="RichTextLabel" parent="TimeGilPanel/VBoxContainer/HSplitGil"]
+[node name="GilText" type="RichTextLabel" parent="FF7MainMenu/TimeGilPanel/VBoxContainer/GilContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 text = "100,000,000"
 horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeGilPanel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FF7MainMenu/TimeGilPanel"]
 libraries = {
 &"": SubResource("AnimationLibrary_86ex8")
 }
 autoplay = "slide_left"
 
-[node name="LocationPanel" type="Panel" parent="."]
+[node name="LocationPanel" type="Panel" parent="FF7MainMenu"]
 modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 0
 offset_left = 752.0
@@ -380,7 +392,7 @@ offset_right = 1152.0
 offset_bottom = 635.0
 theme_override_styles/panel = ExtResource("2_wn7nu")
 
-[node name="LocationLabel" type="RichTextLabel" parent="LocationPanel"]
+[node name="LocationLabel" type="RichTextLabel" parent="FF7MainMenu/LocationPanel"]
 custom_minimum_size = Vector2(300, 48)
 layout_mode = 1
 anchors_preset = 14
@@ -397,19 +409,19 @@ theme_override_font_sizes/normal_font_size = 24
 text = "Sector 7 Slums"
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LocationPanel"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FF7MainMenu/LocationPanel"]
 libraries = {
 &"": SubResource("AnimationLibrary_nwdw3")
 }
 autoplay = "slide_up"
 
-[node name="Utils" type="Node" parent="."]
+[node name="Utils" type="Node" parent="FF7MainMenu"]
 
-[node name="SaverLoader" type="Node" parent="Utils"]
+[node name="SaverLoader" type="Node" parent="FF7MainMenu/Utils"]
 unique_name_in_owner = true
 script = ExtResource("3_86ex8")
 metadata/_custom_type_script = "uid://bmv4nemv3kb50"
 
-[connection signal="pressed" from="MenuPanel/VBoxContainer/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="MenuPanel/VBoxContainer/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="MenuPanel/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="FF7MainMenu/MenuPanel/VBoxContainer/Save" to="FF7MainMenu" method="_on_save_pressed"]
+[connection signal="pressed" from="FF7MainMenu/MenuPanel/VBoxContainer/Load" to="FF7MainMenu" method="_on_load_pressed"]
+[connection signal="pressed" from="FF7MainMenu/MenuPanel/VBoxContainer/Quit" to="FF7MainMenu" method="_on_quit_pressed"]
