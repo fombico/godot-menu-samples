@@ -9,6 +9,7 @@ signal game_clock_time_elapsed
 
 var delta_time: float = 0
 
+
 func _process(delta: float) -> void:
 	delta_time += delta
 	if delta_time < 1:
@@ -26,12 +27,14 @@ func _process(delta: float) -> void:
 	
 	game_clock_time_elapsed.emit(hours, minutes, seconds)
 
+
 func to_save_data() -> GameClockData:
 	var game_clock_data = GameClockData.new()
 	game_clock_data.elapsed_hours = hours
 	game_clock_data.elapsed_minutes = minutes
 	game_clock_data.elapsed_seconds = seconds
 	return game_clock_data
+
 
 func from_save_data(game_clock_data: GameClockData) -> void:
 	hours = game_clock_data.elapsed_hours

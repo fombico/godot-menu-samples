@@ -16,6 +16,7 @@ func save_game():
 	ResourceSaver.save(saved_game, "user://savegame.tres")
 	print("Wrote to " + OS.get_user_data_dir())
 
+
 func load_game():
 	var saved_game:SavedGame = load("user://savegame.tres") as SavedGame
 	if saved_game == null:
